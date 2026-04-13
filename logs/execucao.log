@@ -1,0 +1,11 @@
+2026-04-09 16:44:09,141 [WARNING] ANTHROPIC_API_KEY não configurada. Resumos automáticos estarão indisponíveis.
+2026-04-09 16:44:09,142 [INFO] Modo agendado — PDF gerado diariamente às 23:00 (seg-sex)
+2026-04-09 16:44:09,143 [INFO] PDFs salvos em: C:\SHP\Quartz\Quartz Gestão - Documentos\4. Quartz FIA\Fatos Relevantes\relatorios
+2026-04-09 16:44:09,144 [INFO] Próxima geração: 09/04/2026 23:00 (em 6.3h)
+2026-04-09 16:45:16,489 [WARNING] ANTHROPIC_API_KEY não configurada. Resumos automáticos estarão indisponíveis.
+2026-04-09 16:45:16,492 [INFO] ============================================================
+2026-04-09 16:45:16,492 [INFO] INÍCIO — Processando fatos relevantes de 2026-04-08
+2026-04-09 16:45:16,492 [INFO] ============================================================
+2026-04-09 16:45:16,492 [INFO] Baixando CSV da CVM: https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS/ipe_cia_aberta_2026.zip
+2026-04-09 16:45:16,821 [INFO] CSV carregado: 12591 documentos no total
+2026-04-09 16:45:16,824 [INFO] 0 fato(s) relevante(s) para 2026-04-08

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python quartz-sem-api.py)",
+      "Bash(python -c \"import fpdf; from pathlib import Path; p = Path\\(fpdf.__file__\\).parent / 'fonts'; print\\(p\\); print\\(list\\(p.glob\\('DejaVu*'\\)\\)\\)\")",
+      "Bash(python -c \"import fpdf; from pathlib import Path; p = Path\\(fpdf.__file__\\).parent / 'fonts'; print\\(list\\(p.iterdir\\(\\)\\)\\)\")",
+      "Bash(python quartz-sem-api.py --data 2026-04-07)",
+      "Bash(python quartz-sem-api.py --data 2026-04-03)"
+    ]
+  }
+}

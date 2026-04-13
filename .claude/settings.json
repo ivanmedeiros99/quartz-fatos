@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash(python quartz-tempo-real.py --data 2026-04-10 --sem-texto --intervalo 999)",
+      "Bash(python quartz-tempo-real.py --data 2026-04-10 --sem-texto --intervalo 9999)",
+      "Bash(python quartz_fatos_relevantes.py --data 2026-04-02)",
+      "Bash(python quartz_fatos_relevantes.py --hoje)",
+      "Bash(python quartz_fatos_relevantes.py)",
+      "Bash(python quartz-monitoramento-documentos.py --data 2026-04-02)",
+      "Bash(python quartz-3relatorios.py --data 2026-04-02)",
+      "Bash(python quartz-relatorios-cvm2.py --data 2026-04-08)",
+      "Bash(curl -s \"https://sistemaswebb3-listados.b3.com.br/listedCompaniesProxy/CompanyCall/GetInitialCompanies/eyJsYW5ndWFnZSI6InB0LWJyIn0=\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(type\\(d\\)\\); print\\(str\\(d\\)[:500]\\)\")"
+    ]
+  }
+}
