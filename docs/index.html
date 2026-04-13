@@ -6,33 +6,30 @@
 <title>QUARTZ FIA — 10/04/2026</title>
 <style>
   :root {
-    --bg: #f4f7fb;
-    --surface: rgba(255, 255, 255, 0.9);
-    --surface-solid: #ffffff;
-    --line: #e2e8f0;
-    --text: #0f172a;
-    --muted: #64748b;
-    --muted-2: #94a3b8;
-    --blue-1: #1d4ed8;
-    --blue-2: #2563eb;
-    --blue-3: #60a5fa;
-    --blue-soft: #eff6ff;
-    --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 14px 36px rgba(15, 23, 42, 0.10);
-    --radius-xl: 20px;
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-2: #fbfbfc;
+    --line: #e6e8eb;
+    --text: #111827;
+    --muted: #6b7280;
+    --muted-2: #9ca3af;
+    --navy: #0f172a;
+    --navy-2: #111827;
+    --gold: #c8a96b;
+    --gold-soft: #f4ede1;
+    --link: #163a70;
+    --shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
     --radius-lg: 16px;
     --radius-md: 12px;
+    --radius-sm: 10px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { -webkit-text-size-adjust: 100%; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
-    background:
-      radial-gradient(circle at top, rgba(96, 165, 250, 0.14), transparent 28%),
-      linear-gradient(180deg, #f8fbff 0%, var(--bg) 22%, #eef2f7 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    background: var(--bg);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -43,111 +40,86 @@
   }
 
   .header {
-    background: linear-gradient(135deg, #0f172a 0%, #163873 44%, #1d4ed8 100%);
+    background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
     color: white;
     padding: 22px 16px 18px;
     position: sticky;
     top: 0;
     z-index: 20;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.20);
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-  }
-
-  .header::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.18);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
   .brand-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    flex-direction: column;
+    gap: 6px;
   }
 
   .brand h1 {
-    font-size: 28px;
-    line-height: 1;
+    font-size: 26px;
+    font-weight: 700;
     letter-spacing: -0.03em;
-    font-weight: 800;
+    line-height: 1;
   }
 
   .brand .meta {
     font-size: 13px;
-    opacity: 0.86;
-    margin-top: 8px;
+    color: rgba(255,255,255,0.75);
     font-weight: 500;
   }
 
-  .brand-badge {
-    flex-shrink: 0;
-    padding: 8px 10px;
+  .brand-accent {
+    width: 44px;
+    height: 3px;
+    background: var(--gold);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    backdrop-filter: blur(10px);
+    margin-top: 2px;
   }
 
   .tabs-wrap {
     position: sticky;
-    top: 102px;
+    top: 93px;
     z-index: 19;
     padding: 12px 12px 0;
-    background: linear-gradient(180deg, rgba(244, 247, 251, 0.95), rgba(244, 247, 251, 0.78));
+    background: linear-gradient(180deg, rgba(246,247,249,0.98), rgba(246,247,249,0.92));
     backdrop-filter: blur(8px);
   }
 
   .tabs {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: var(--shadow-sm);
-    padding: 8px;
-    border-radius: 18px;
-    backdrop-filter: blur(12px);
   }
 
   .tab {
-    min-width: 0;
-    min-height: 58px;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 14px;
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    width: 100%;
+    min-height: 56px;
+    padding: 14px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    text-align: center;
-    line-height: 1.15;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: normal;
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .tab:active {
-    transform: scale(0.98);
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    box-shadow: 0 1px 2px rgba(17, 24, 39, 0.02);
   }
 
   .tab.active {
-    background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
-    color: white;
-    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+    border-color: rgba(200, 169, 107, 0.65);
+    background: linear-gradient(180deg, #ffffff 0%, #fcfaf7 100%);
+    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+  }
+
+  .tab-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
   }
 
   .tab-icon {
@@ -157,7 +129,10 @@
   }
 
   .tab-label {
-    min-width: 0;
+    font-size: 14px;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .badge {
@@ -165,23 +140,23 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 22px;
-    height: 22px;
-    padding: 0 7px;
+    min-width: 28px;
+    height: 26px;
+    padding: 0 9px;
     border-radius: 999px;
-    background: rgba(15, 23, 42, 0.08);
-    color: inherit;
-    font-size: 11px;
-    font-weight: 800;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 700;
   }
 
   .tab.active .badge {
-    background: rgba(255, 255, 255, 0.20);
-    color: white;
+    background: var(--gold-soft);
+    color: #8a6b30;
   }
 
   .content {
-    padding: 14px 12px 22px;
+    padding: 14px 12px 24px;
   }
 
   .panel {
@@ -190,11 +165,11 @@
 
   .panel.active {
     display: block;
-    animation: fadeIn 0.22s ease;
+    animation: fadeIn 0.18s ease;
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
+    from { opacity: 0; transform: translateY(3px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
@@ -202,10 +177,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 16px;
-    font-weight: 800;
-    color: #1e293b;
-    margin: 14px 4px 12px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy-2);
+    margin: 16px 2px 12px;
     letter-spacing: -0.02em;
   }
 
@@ -213,35 +188,30 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 28px;
+    min-width: 30px;
     height: 24px;
     padding: 0 8px;
     border-radius: 999px;
-    background: var(--blue-soft);
-    color: var(--blue-2);
+    background: #eef2f7;
+    color: #475569;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .card {
-    background: var(--surface-solid);
-    border-radius: var(--radius-xl);
-    padding: 16px 16px 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 16px;
     margin-bottom: 12px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    border-left: 4px solid #e2e8f0;
-  }
-
-  .card:has(.ticker) {
-    border-left-color: var(--blue-3);
+    box-shadow: var(--shadow);
   }
 
   .card-header {
-    font-size: 14px;
-    font-weight: 800;
-    color: #17305f;
-    line-height: 1.42;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.45;
     letter-spacing: -0.01em;
   }
 
@@ -249,50 +219,50 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--blue-soft);
-    color: var(--blue-2);
+    background: #f3f4f6;
+    color: #1f2937;
     font-size: 11px;
     font-weight: 800;
-    padding: 3px 8px;
-    border-radius: 8px;
-    margin-right: 7px;
-    vertical-align: middle;
-    border: 1px solid rgba(96, 165, 250, 0.20);
+    padding: 4px 8px;
+    border-radius: 999px;
+    margin-right: 8px;
+    border: 1px solid #e5e7eb;
   }
 
   .tag {
     display: inline-flex;
     align-items: center;
-    background: #f8fafc;
+    background: #fafafa;
     color: var(--muted);
     font-size: 10px;
     font-weight: 700;
-    padding: 3px 7px;
-    border-radius: 7px;
-    border: 1px solid #e2e8f0;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid #eceff3;
     margin-left: 6px;
-    vertical-align: middle;
+    margin-top: 6px;
   }
 
   .card-meta {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--muted);
-    margin-top: 8px;
-    line-height: 1.52;
+    margin-top: 10px;
+    line-height: 1.55;
   }
 
   .pdf-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 14px;
     font-size: 13px;
-    color: var(--blue-2);
+    color: var(--link);
     text-decoration: none;
-    font-weight: 800;
-    padding: 9px 12px;
+    font-weight: 700;
+    padding: 10px 12px;
+    border: 1px solid #d8dde6;
     border-radius: 10px;
-    background: var(--blue-soft);
+    background: #fafbfd;
   }
 
   .pdf-link::before {
@@ -301,54 +271,56 @@
     line-height: 1;
   }
 
-  .pdf-link:active {
-    transform: scale(0.99);
-  }
-
   .empty {
     color: var(--muted-2);
     font-size: 13px;
     text-align: center;
     padding: 26px 18px;
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px dashed #dbe3ef;
-    border-radius: 16px;
+    background: var(--surface-2);
+    border: 1px dashed #d8dde6;
+    border-radius: 14px;
   }
 
   .footer {
     text-align: center;
-    padding: 18px 18px 24px;
+    padding: 20px 16px 26px;
     font-size: 11px;
     color: var(--muted-2);
   }
 
   @media (min-width: 768px) {
     body {
-      max-width: 760px;
+      max-width: 860px;
       margin: 0 auto;
     }
 
     .header {
-      border-bottom-left-radius: 26px;
-      border-bottom-right-radius: 26px;
+      padding: 28px 22px 20px;
+    }
+
+    .brand h1 {
+      font-size: 30px;
     }
 
     .tabs-wrap {
-      top: 108px;
+      top: 106px;
+      padding: 14px 16px 0;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
     }
 
     .tab {
-      min-height: 62px;
-      padding: 12px 14px;
-      font-size: 13px;
+      min-height: 68px;
+      padding: 16px 16px;
+      justify-content: space-between;
     }
 
     .content {
       padding: 18px 16px 28px;
-    }
-
-    .card {
-      padding: 18px 18px 16px;
     }
   }
 </style>
@@ -356,23 +328,23 @@
 <body>
 <div class="app-shell">
 
-  <div class="header">
+  <header class="header">
     <div class="brand-row">
       <div class="brand">
         <h1>QUARTZ FIA</h1>
-        <div class="meta">10/04/2026 &middot; Atualizado às 15:39</div>
+        <div class="brand-accent"></div>
+        <div class="meta">10/04/2026 &middot; Atualizado às 15:48</div>
       </div>
-      <div class="brand-badge">Radar CVM</div>
     </div>
-  </div>
+  </header>
 
   <div class="tabs-wrap">
-    <div class="tabs" role="tablist">
-      <button class="tab active" onclick="showTab('fatos_relevantes', this)" aria-selected="true" role="tab"><span class="tab-icon">🔴</span><span class="tab-label">Fatos Relevantes</span><span class="badge">14</span></button>
-<button class="tab " onclick="showTab('comunicados', this)" aria-selected="false" role="tab"><span class="tab-icon">🔵</span><span class="tab-label">Comunicados ao Mercado</span><span class="badge">17</span></button>
-<button class="tab " onclick="showTab('resultados', this)" aria-selected="false" role="tab"><span class="tab-icon">🟢</span><span class="tab-label">Release de Resultados</span><span class="badge">4</span></button>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" onclick="showTab('fatos_relevantes', this)" aria-selected="true" role="tab"><span class="tab-main"><span class="tab-icon">🔴</span><span class="tab-label">Fatos Relevantes</span></span><span class="badge">14</span></button>
+<button class="tab " onclick="showTab('comunicados', this)" aria-selected="false" role="tab"><span class="tab-main"><span class="tab-icon">🔵</span><span class="tab-label">Comunicados ao Mercado</span></span><span class="badge">17</span></button>
+<button class="tab " onclick="showTab('resultados', this)" aria-selected="false" role="tab"><span class="tab-main"><span class="tab-icon">🟢</span><span class="tab-label">Release de Resultados</span></span><span class="badge">4</span></button>
 
-    </div>
+    </nav>
   </div>
 
   <main class="content">
@@ -476,9 +448,9 @@
       <a href="pdfs/ANIMA_HOLDING_S.A._10_04_2026_17_14.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">Visualizar PDF</a>
     </div>
     <div class="card">
-      <div class="card-header"> BCO ESTADO DO RIO GRANDE DO SUL S.A. <span class="tag">Mudança de Auditor</span></div>
+      <div class="card-header"> BANCO DO ESTADO DO RIO GRANDE DO SUL SA <span class="tag">Mudança de Auditor</span></div>
       <div class="card-meta"> &middot; 10/04/2026 17:16</div>
-      <a href="pdfs/BCO_ESTADO_DO_RIO_GRANDE_DO_SUL_S.A._10_04_2026_17_16.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">Visualizar PDF</a>
+      <a href="pdfs/BANCO_DO_ESTADO_DO_RIO_GRANDE_DO_SUL_SA_10_04_2026_17_16.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">Visualizar PDF</a>
     </div>
     <div class="card">
       <div class="card-header"> CEMIG DISTRIBUICAO S.A. <span class="tag">Outros Comunicados Não Considerados Fatos Relevantes</span></div>
@@ -501,9 +473,9 @@
       <a href="pdfs/CIELO_S.A._-_INSTITUI_O_DE_PAGAMENTO_10_04_2026_18_23.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">Visualizar PDF</a>
     </div>
     <div class="card">
-      <div class="card-header"> CONC DO AEROPORTO INTERNACIONAL DE GUARULHOS S.A. <span class="tag">Mudança de Auditor</span></div>
+      <div class="card-header"> CONC DO AEROPORTO INTERNACIONAL DE GUARULHOS S.A <span class="tag">Mudança de Auditor</span></div>
       <div class="card-meta"> &middot; 10/04/2026 13:45</div>
-      <a href="pdfs/CONC_DO_AEROPORTO_INTERNACIONAL_DE_GUARULHOS_S.A._10_04_2026_13_45.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">Visualizar PDF</a>
+      <a href="pdfs/CONC_DO_AEROPORTO_INTERNACIONAL_DE_GUARULHOS_S.A_10_04_2026_13_45.pdf" target="_blank" rel="noopener noreferrer" class="pdf-link">Visualizar PDF</a>
     </div>
     <div class="card">
       <div class="card-header"> ENGIE BRASIL ENERGIA S.A. <span class="tag">Outros Comunicados Não Considerados Fatos Relevantes</span></div>
@@ -567,9 +539,9 @@
 
   </main>
 
-  <div class="footer">
-    Fonte: RAD/CVM (tempo real) &middot; Gerado às 15:39
-  </div>
+  <footer class="footer">
+    Fonte: RAD/CVM (tempo real) &middot; Gerado às 15:48
+  </footer>
 
 </div>
 
